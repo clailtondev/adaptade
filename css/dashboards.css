@@ -1,0 +1,64 @@
+/* Styles specific to Dashboards */
+
+/* General Card Animations */
+.dashboard-card, .activity-card, .medal-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dashboard-card:hover, .activity-card:hover, .medal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    background-color: #0d1730; /* Slightly lighter dark blue on hover */
+}
+
+/* Specific button styles for dashboards */
+.dashboard-card button,
+.activity-card button,
+.medal-card button {
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.dashboard-card button:hover,
+.activity-card button:hover,
+.medal-card button:hover {
+    transform: translateY(-2px);
+}
+
+/* Progress bar within cards */
+.completion-bar {
+    height: 8px; /* thinner progress bar */
+    border-radius: 9999px; /* fully rounded */
+    overflow: hidden; /* ensures inner bar is rounded */
+}
+.completion-bar div {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Layout for dashboard headers to ensure consistent spacing */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3b82f6; /* Blue-500 */
+    margin-bottom: 1.5rem;
+}
+
+header .flex.items-center {
+    flex-shrink: 0; /* Prevent shrinking on small screens */
+}
+
+header nav {
+    flex-grow: 1; /* Allow nav to take up available space */
+    justify-content: center; /* Center nav items */
+}
+
+@media (max-width: 767px) {
+    header nav {
+        display: none; /* Hide nav on small screens */
+    }
+}
